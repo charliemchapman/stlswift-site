@@ -17,10 +17,6 @@ Join the Slack to stay up to date with the latest conversation, vote on meetup d
 We’re on all the social media platforms… for better or worse.
 
 <div class="social-links">
-<a href="https://twitter.com/stlswift">
-    <img src="/assets/images/twitter-logo.png" alt="Twitter" class="social-icon">
-    Twitter
-</a>
 <a href="https://bsky.app/profile/stlswift.bsky.social">
     <img src="/assets/images/bluesky-icon.svg" alt="Bluesky" class="social-icon">
     Bluesky
@@ -28,5 +24,9 @@ We’re on all the social media platforms… for better or worse.
 <a href="https://mastodon.social/@stlswift">
     <img src="/assets/images/mastodon-icon.png" alt="Mastodon" class="social-icon">
     Mastodon
+</a>
+<a href="https://twitter.com/stlswift">
+    <img src="/assets/images/twitter-logo.png" alt="Twitter" class="social-icon">
+    Twitter
 </a>
 </div>

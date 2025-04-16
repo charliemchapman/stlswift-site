@@ -1,7 +1,7 @@
 title: STL Swift
 description: iOS Developer Meetup Group in St. Louis
-url: ""
-baseurl: ""
+url: "https://stlswift.com"
+baseurl: "" # Empty when using a custom domain
 
 # Build settings
 markdown: kramdown
@@ -14,4 +14,6 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - .git/ 
+  - .git/
+  - README.md
+  - .github/ 

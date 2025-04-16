@@ -1,0 +1,17 @@
+title: STL Swift
+description: iOS Developer Meetup Group in St. Louis
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git/ 

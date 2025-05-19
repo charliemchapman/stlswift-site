@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="event">
+    <header class="event-header">
+        <h1>{{ page.display_title | default: page.title }}</h1>
+        <div class="event-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %d, %Y at %I:%M %p" }}
+            </time>
+            {% if page.location %}
+            <div class="event-location">
+                📍 {{ page.location }}
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="event-content">
+        {{ content }}
+    </div>
+
+    {% if page.rsvp_link %}
+    <div class="event-rsvp">
+        <a href="{{ page.rsvp_link }}" class="main-link" target="_blank" rel="noopener">
+            RSVP for this Event
+        </a>
+    </div>
+    {% endif %}
+</article>
+
+<style>
+    .event {
+        margin-bottom: 2rem;
+    }
+    .event-header {
+        margin-bottom: 2rem;
+    }
+    .event-meta {
+        color: #666;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+    }
+    .event-location {
+        margin-top: 0.5rem;
+    }
+    .event-content {
+        margin-bottom: 2rem;
+    }
+    .event-rsvp {
+        margin-top: 2rem;
+    }
+</style> 

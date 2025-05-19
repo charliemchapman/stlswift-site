@@ -1,0 +1,136 @@
+---
+layout: default
+title: All Events
+---
+
+<h1>All Events</h1>
+
+<div class="events-list">
+  {% assign sorted_events = site.events | sort: 'date' | reverse %}
+  {% for event in sorted_events %}
+    <article class="event-card">
+      {% if event.image %}
+      <div class="event-image">
+          <img src="{{ event.image }}" alt="{{ event.display_title | default: event.title }}">
+      </div>
+      {% endif %}
+      <div class="event-content">
+        <div class="event-header">
+          <div class="event-main">
+            <div class="event-date">
+              {{ event.date | date: "%B %d, %Y at %I:%M %p" }}
+            </div>
+            <h2 class="event-title">
+              <a href="{{ event.url }}">{{ event.display_title | default: event.title }}</a>
+            </h2>
+            {% if event.location %}
+              <div class="event-location">📍 {{ event.location }}</div>
+            {% endif %}
+          </div>
+          {% if event.rsvp_link %}
+          <div class="event-rsvp">
+            <a href="{{ event.rsvp_link }}" class="main-link" target="_blank" rel="noopener">RSVP</a>
+          </div>
+          {% endif %}
+        </div>
+        <div class="event-excerpt">
+          {{ event.content | strip_html | truncatewords: 50 }}
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+<style>
+.events-list {
+  margin: 2rem 0;
+}
+.event-card {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.event-content {
+  flex: 1;
+}
+.event-image {
+  width: 150px;
+  flex-shrink: 0;
+}
+.event-image img {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.event-main {
+  flex: 1;
+}
+.event-rsvp {
+  flex-shrink: 0;
+}
+.event-rsvp .main-link {
+  margin: 0;
+  white-space: nowrap;
+}
+.event-date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.event-title {
+  margin: 0 0 0.5rem 0;
+}
+.event-title a {
+  color: #FF3B30;
+  text-decoration: none;
+}
+.event-title a:hover {
+  text-decoration: underline;
+}
+.event-location {
+  margin-bottom: 1rem;
+  color: #666;
+}
+.event-excerpt {
+  color: #333;
+}
+.event-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.event-details-link {
+  color: #007AFF;
+  text-decoration: none;
+}
+.event-details-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .event-card {
+    flex-direction: column;
+  }
+  .event-image {
+  }
+  .event-image img {
+    height: 150px;
+  }
+  .event-header {
+    flex-direction: column;
+  }
+  .event-rsvp {
+    align-self: flex-start;
+  }
+}
+</style> 

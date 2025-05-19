@@ -5,8 +5,24 @@ baseurl: "" # Empty when using a custom domain
 
 # Build settings
 markdown: kramdown
+future: true
 plugins:
   - jekyll-feed
+
+# Collections
+collections:
+  events:
+    output: true
+    permalink: /:collection/:slug:output_ext
+
+# Default front matter for events
+defaults:
+  - scope:
+      path: "_events"
+      type: "events"
+    values:
+      layout: "event"
+      output: true
 
 # Exclude from processing
 exclude:

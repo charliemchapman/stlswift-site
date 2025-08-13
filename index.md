@@ -9,52 +9,10 @@ Welcome to STL Swift, the iOS developer meetup group in St. Louis! We're a commu
     Join our Slack Community
 </a>
 
-<div class="section-header">
-    <h2>Upcoming Events</h2>
-    <a href="/events" class="view-all-link">View All</a>
-</div>
-
-<div class="events-list">
-{% assign future_events = site.events | where_exp:"event", "event.date > site.time" | sort: 'date' %}
-{% if future_events.size > 0 %}
-  {% for event in future_events %}
-    <div class="event-card">
-        {% if event.image %}
-        <div class="event-image">
-            <img src="{{ event.image }}" alt="{{ event.display_title | default: event.title }}">
-        </div>
-        {% endif %}
-        <div class="event-content">
-            <div class="event-header">
-                <div class="event-main">
-                    <div class="event-date">
-                        {{ event.date | date: "%B %d, %Y at %I:%M %p" }}
-                    </div>
-                    <h3 class="event-title">
-                        <a href="{{ site.baseurl }}{{ event.url }}">{{ event.display_title | default: event.title }}</a>
-                    </h3>
-                    {% if event.location %}
-                    <div class="event-location">
-                        📍 {{ event.location }}
-                    </div>
-                    {% endif %}
-                </div>
-                {% if event.rsvp_link %}
-                <div class="event-rsvp">
-                    <a href="{{ event.rsvp_link }}" class="main-link" target="_blank" rel="noopener">RSVP</a>
-                </div>
-                {% endif %}
-            </div>
-            <div class="event-excerpt">
-                {{ event.content | strip_html | truncatewords: 50 }}
-            </div>
-        </div>
-    </div>
-  {% endfor %}
-{% else %}
-  <p>No upcoming events scheduled. Check back soon!</p>
-{% endif %}
-</div>
+<a href="https://lu.ma/stlswift" class="main-link" target="_blank" rel="noopener">
+    <img src="/assets/images/luma-logo.svg" alt="Luma" class="social-icon">
+    View our Events on Luma
+</a>
 
 ## Connect With Us
 

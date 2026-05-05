@@ -39,9 +39,9 @@ layout: default
         <div class="social-links">
             <a href="https://twitter.com/STL_Swift">
                 <img src="/assets/images/twitter-logo.png" alt="" class="social-icon">
-                @STL_Swift
+                Twitter
             </a>
-            <a href="https://bsky.app/profile/stlswift.bsky.social">
+            <a href="https://bsky.app/profile/stlswift.com">
                 <img src="/assets/images/bluesky-icon.svg" alt="" class="social-icon">
                 Bluesky
             </a>
